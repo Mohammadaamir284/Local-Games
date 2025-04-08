@@ -1,0 +1,56 @@
+@media only screen and (max-width: 1140px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .num {
+        width: 90vw;
+    }
+
+    .text {
+        text-align: center;
+        width: 83vw;
+        height: 50vh;
+
+    }
+
+    .inp {
+        width: 65vw;
+    }
+
+    .inin {
+        font-size: 23px;
+    }
+
+    .spc {
+        width: 90vw;
+    }
+
+    .text1 {
+        text-align: center;
+        width: 83vw;
+        height: 50vh;
+
+    }
+
+    .inp1 {
+        width: 65vw;
+    }
+
+    .inin {
+        font-size: 23px;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+}

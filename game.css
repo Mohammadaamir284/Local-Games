@@ -1,0 +1,148 @@
+body {
+    font-family: fantasy;
+    font-weight: lighter;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-size: 20px;
+    background: #f2f2f2;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.fd {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.fd1 {
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.inp {
+    background-color: whitesmoke;
+    width: 30vw;
+    height: 3vh;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.inp1 {
+    background-color: whitesmoke;
+    width: 30vw;
+    height: 3vh;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn {
+    border: none;
+    font-size: large;
+    border-radius: 5px;
+    cursor: pointer;
+    color: aliceblue;
+    background-color: red;
+}
+
+.btn1 {
+    border: none;
+    font-size: large;
+    border-radius: 5px;
+    cursor: pointer;
+    color: aliceblue;
+    background-color: red;
+}
+
+.text {
+
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    width: 37vw;
+    height: 50vh;
+    color: rgb(255, 255, 255);
+    word-wrap: break-word;
+    background-color: blueviolet;
+    font-size: 40px;
+}
+
+.text1 {
+
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    width: 37vw;
+    height: 50vh;
+    color: black;
+    word-wrap: break-word;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: blueviolet;
+    font-size: 30px;
+}
+
+.num {
+    border: 2px solid;
+    width: 40vw;
+    padding: 1rem;
+    text-align: center;
+    height: 70vh;
+    border-radius: 20px;
+    background-color: rgb(148, 56, 56);
+}
+
+.spc {
+    border: 2px solid;
+    width: 40vw;
+    padding: 1rem;
+    text-align: center;
+    height: 70vh;
+    border-radius: 20px;
+    background-color: rgb(148, 56, 56);
+}
+
+.in {
+    font-size: 20px;
+    text-align: left;
+    font-family: monospace;
+}
+
+.inin {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.ininin {
+    font-size: 20px;
+
+    padding-bottom: 1rem;
+}
+
+.fin {
+    display: flex;
+    gap: 20px;
+}
+
+span {
+    padding-right: 10px;
+    color: black;
+}
