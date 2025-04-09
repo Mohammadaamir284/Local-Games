@@ -11,7 +11,7 @@ function sendme(params) {
 
     if (inp2) return
 
-    const userInput = document.getElementById("nume").value.trim();
+    let userInput = document.getElementById("nume").value.trim();
 
     if (userInput === "") {
 
@@ -21,12 +21,12 @@ function sendme(params) {
         return;
     }
 
-    inp = parseInt(userInput);
+    input = parseInt(userInput);
 
 
-    if (isNaN(inp) || inp < 1 || inp > 200) {
-
-        me.textContent = "Invalid input! Enter a number between 1 and 200.";
+    if (isNaN(input) || input < 1 || input > 200) {
+        document.getElementById("nume").value = ""
+       return me.textContent = "Invalid input! Enter a number between 1 and 200.";
     }
 
     score--;
@@ -35,35 +35,37 @@ function sendme(params) {
     if (score <= 0) {
         // alert(` Game Over! You've run out of tries. The correct number was ${a}.`);
         console.log(` Game Over! The correct number was: ${a}`);
-        me.textContent = ` Game Over! You've run out of tries. The correct number was ${a}.`
+        document.getElementById("nume").value = ""
+       return me.textContent = ` Game Over! You've run out of tries. The correct number was ${a}.`
     }
 
 
-    if (inp === a) {
+    if (input === a) {
         //    alert(`🎉 Congratulations! You guessed it right!\nThe number was ${a}.\nYour final score: ${score}`);
-        me.textContent = `🎉 Congratulations! You guessed it right!\nThe number was ${a}.\nYour final score: ${score}`;
         console.log(" Right Guess! You are the Winner!");
         console.log(` The Actual Number was: ${a}`);
         console.log(` Your Final Score: ${score}`);
+        document.getElementById("nume").value = ""
+        return  me.textContent = `🎉 Congratulations! You guessed it right!\nThe number was ${a}.\nYour final score: ${score}`;
 
-    } else if (inp < a) {
+    } else if (input < a) {
         // alert(" Your guess is too low! Try again.");
-        me.textContent = ` Your guess is too low! Try again. \n You’ve got ${score} chances left.`
-    } else if (inp > a) {
+        document.getElementById("nume").value = ""
+       return me.textContent = ` Your guess is too low! Try again. \n You’ve got ${score} chances left.`
+    } else if (input > a) {
         //  alert(" Your guess is too high! Try again.");
-        me.textContent = ` Your guess is too high! Try again.\n You’ve got ${score} chances left.`
+        document.getElementById("nume").value = ""
+       return me.textContent = ` Your guess is too high! Try again.\n You’ve got ${score} chances left.`
     }
 
     else {
-
         console.log(" Game Cancelled by user.");
-
         me.textContent = "Game Cancelled.\nOnly Number You Can Try ";
+        document.getElementById("nume").value = ""
         inp2 = true
-
     }
-
     document.getElementById("nume").value = ""
+
 }
 
 let getgame = Math.floor(Math.random() * 3);
