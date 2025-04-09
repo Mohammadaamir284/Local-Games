@@ -6,17 +6,18 @@
 
     .num {
         width: 90vw;
+        height: 80vh;
     }
 
     .text {
         text-align: center;
         width: 83vw;
-        height: 50vh;
+        height: 60vh;
 
     }
 
     .inp {
-        width: 65vw;
+        width: 60vw;
     }
 
     .inin {
@@ -25,17 +26,18 @@
 
     .spc {
         width: 90vw;
+        height: 80vh;
     }
 
     .text1 {
         text-align: center;
         width: 83vw;
-        height: 50vh;
+        height: 60vh;
 
     }
 
     .inp1 {
-        width: 65vw;
+        width: 60vw;
     }
 
     .inin {
@@ -46,7 +48,9 @@
         font-weight:900 ;
         font-size: 30px;
     }
-
+    .viz{
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 500px) {
