@@ -51,11 +51,11 @@ function sendme(params) {
     } else if (input < a) {
         // alert(" Your guess is too low! Try again.");
         document.getElementById("nume").value = ""
-       return me.textContent = ` Your guess is too low! Try again. \n You’ve got ${score} chances left.`
+       return me.textContent = ` 💹 Your guess is too low! Try again. \n You’ve got ${score} chances left.`
     } else if (input > a) {
         //  alert(" Your guess is too high! Try again.");
         document.getElementById("nume").value = ""
-       return me.textContent = ` Your guess is too high! Try again.\n You’ve got ${score} chances left.`
+       return me.textContent = ` 📉 Your guess is too high! Try again.\n You’ve got ${score} chances left.`
     }
 
     else {
@@ -77,7 +77,7 @@ let me2 = document.getElementById("me")
 
 function sendyou(params) {
     if (game2) return
-    const aamir = document.getElementById("nume2").value.trim();
+    const aamir =   document.getElementById("nume2").value.trim().toLowerCase();
     if (aamir === "") {
         me2.textContent = "GameOver Try Again"
         game2 = true
@@ -97,13 +97,13 @@ function sendyou(params) {
             return "Match is Tied If You Want To play SO Relod The Page And Try Againe "
         }
         else if (game === "stone" && aamir === "paper") {
-            return me2.textContent = "You Are Winner"
+            return me2.textContent = " 🎉🎊 You Are Winner"
         }
         else if (game === "paper" && aamir === "scissor") {
-            return me2.textContent = "You Are Winner"
+            return me2.textContent = " 🎉🎊 You Are Winner"
         }
         else if (game === "scissor" && aamir === "stone") {
-            return me2.textContent = "You Are Winner"
+            return me2.textContent = " 🎉🎊 You Are Winner"
         }
         else if (game === "paper" && aamir === "stone") {
             return me2.textContent = "Computer Is Winner"
