@@ -4,6 +4,9 @@ console.log(a)
 let score = 8;
 let inp2 = false;
 let me = document.getElementById("me2")
+let inid = document.getElementById("inid")
+
+
 
 
 
@@ -15,18 +18,18 @@ function sendme(params) {
 
     if (userInput === "") {
 
-        console.log(" Game Cancelled by user.");
-        me.textContent = "Game Cancelled.";
-        inp2 = true
+        inp2 = false
+       
         return;
     }
 
-    input = parseInt(userInput);
+   let input = parseInt(userInput);
 
 
     if (isNaN(input) || input < 1 || input > 200) {
         document.getElementById("nume").value = ""
-       return me.textContent = "Invalid input! Enter a number between 1 and 200.";
+         document.querySelector(".btnh").style.display = "block"
+        return me.textContent = "Invalid input! Enter a number between 1 and 200.";
     }
 
     score--;
@@ -36,7 +39,8 @@ function sendme(params) {
         // alert(` Game Over! You've run out of tries. The correct number was ${a}.`);
         console.log(` Game Over! The correct number was: ${a}`);
         document.getElementById("nume").value = ""
-       return me.textContent = ` Game Over! You've run out of tries. The correct number was ${a}.`
+        document.querySelector(".btnh").style.display = "block"
+        return me.textContent = ` Game Over! You've run out of tries. The correct number was ${a}.`
     }
 
 
@@ -46,16 +50,17 @@ function sendme(params) {
         console.log(` The Actual Number was: ${a}`);
         console.log(` Your Final Score: ${score}`);
         document.getElementById("nume").value = ""
-        return  me.textContent = `🎉 Congratulations! You guessed it right!\nThe number was ${a}.\nYour final score: ${score}`;
+        document.querySelector(".btnh").style.display = "block"
+        return me.textContent = `🎉 Congratulations! You guessed it right!\nThe number was ${a}.\nYour final score: ${score}`;
 
     } else if (input < a) {
         // alert(" Your guess is too low! Try again.");
         document.getElementById("nume").value = ""
-       return me.textContent = ` 💹 Your guess is too low! Try again. \n You’ve got ${score} chances left.`
+        return me.textContent = ` 💹 Your guess is too low! Try again. \n You’ve got ${score} chances left.`
     } else if (input > a) {
         //  alert(" Your guess is too high! Try again.");
         document.getElementById("nume").value = ""
-       return me.textContent = ` 📉 Your guess is too high! Try again.\n You’ve got ${score} chances left.`
+        return me.textContent = ` 📉 Your guess is too high! Try again.\n You’ve got ${score} chances left.`
     }
 
     else {
@@ -63,10 +68,23 @@ function sendme(params) {
         me.textContent = "Game Cancelled.\nOnly Number You Can Try ";
         document.getElementById("nume").value = ""
         inp2 = true
+        document.querySelector(".btnh").style.display = "block"
     }
     document.getElementById("nume").value = ""
+    document.getElementById("nume").disabled = true;
+
 
 }
+document.getElementById("btnh1").addEventListener("click", () => {
+    a = Math.floor(Math.random() * 200) + 1;
+    console.log(a);
+     document.getElementById("nume").value = ""
+    score = 8
+    inp2 = false
+    me.textContent = "Enter your Number"
+    document.querySelector(".btnh").style.display = "none"
+})
+
 
 let getgame = Math.floor(Math.random() * 3);
 let game = ["stone", "paper", "scissor"][getgame]
@@ -77,17 +95,19 @@ let me2 = document.getElementById("me")
 
 function sendyou(params) {
     if (game2) return
-    const aamir =   document.getElementById("nume2").value.trim().toLowerCase();
+    const aamir = document.getElementById("nume2").value.trim().toLowerCase();
     if (aamir === "") {
-        me2.textContent = "GameOver Try Again"
-        game2 = true
+       
+        game2 = false
+        document.getElementById("nume2").value = ""
         return
     }
 
 
     if (!["stone", "paper", "scissor"].includes(aamir)) {
-        me2.textContent = "❌ Invalid input! Please type: stone, paper, or scissor.";
-        return;
+       game2 = false
+        document.getElementById("nume2").value = ""
+        return
     }
 
     const macth = (game, aamir) => {
@@ -116,14 +136,23 @@ function sendyou(params) {
         }
     }
 
-        let result = macth(game, aamir)
-        me2.textContent = (`Computer is ${game}  /  You Are ${aamir} \n  ${result}`)
-        game2 = true
-   
+    let result = macth(game, aamir)
+    me2.textContent = (`Computer is ${game}  /  You Are ${aamir} \n  ${result}`)
+    game2 = true
+    document.querySelector(".btnh3").style.display = "block"
+
 
     document.getElementById("nume2").value = ""
 }
 
+document.getElementById("btn2").addEventListener("click", () => {
+     getgame = Math.floor(Math.random() * 3);
+     game = ["stone", "paper", "scissor"][getgame]
+     console.log(game);
+     game2 = false
+     me2.textContent = "Play Again"
+    document.querySelector(".btnh3").style.display = "none"
+})
 
 
 
